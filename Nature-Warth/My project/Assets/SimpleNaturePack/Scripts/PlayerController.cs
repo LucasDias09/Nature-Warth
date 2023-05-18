@@ -6,20 +6,19 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     public NavMeshAgent agent;
-    // Start is called before the first frame update
+    public string targetObjectName; // Name of the target object
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(1)){
-            Ray movePosition = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if(Physics.Raycast(movePosition, out var hitInfo)){
-                agent.SetDestination(hitInfo.point);
-            }
+        GameObject targetObject = GameObject.Find(targetObjectName);
+        if (targetObject != null)
+        {
+            agent.SetDestination(targetObject.transform.position);
+        }
+        else
+        {
+            Debug.LogWarning("Target object not found!");
         }
     }
 }
+

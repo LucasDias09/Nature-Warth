@@ -1365,6 +1365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  targetObjectName: 
 --- !u!1 &396889505
 GameObject:
   m_ObjectHideFlags: 0
@@ -5347,6 +5348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  targetObjectName: 
 --- !u!1001 &1281098333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7143,6 +7145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  targetObjectName: 
 --- !u!1001 &1663273887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9423,6 +9426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2128489399}
+  targetObjectName: tree_common
 --- !u!195 &2128489399
 NavMeshAgent:
   m_ObjectHideFlags: 0
