@@ -16,23 +16,25 @@ public class BuildingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(pendingObject != null)
+        if (pendingObject != null)
         {
             pendingObject.transform.position = pos;
 
-            if(Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 PlaceObject();
             }
         }
-        
     }
 
     public void PlaceObject()
     {
-        pendingObject = null;
+        if (pendingObject != null)
+        {
+            pendingObject.GetComponent<CapsuleCollider>().enabled = true;
+            pendingObject = null;
+        }
     }
-    
 
     private void FixedUpdate()
     {
@@ -46,7 +48,7 @@ public class BuildingManager : MonoBehaviour
 
     public void SelectObject(int index)
     {
-        pendingObject = Instantiate(objects[index], pos, transform.rotation); 
+        pendingObject = Instantiate(objects[index], pos, transform.rotation);
+        pendingObject.GetComponent<CapsuleCollider>().enabled = false;
     }
-
 }

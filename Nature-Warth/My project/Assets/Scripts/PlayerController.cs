@@ -6,19 +6,50 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public string targetObjectName; // Name of the target object
+    public string targetObjectTag; // Tag of the target object
+
+    private GameObject targetObject; // Reference to the target object
 
     void Start()
     {
-        GameObject targetObject = GameObject.Find(targetObjectName);
+        FindNearestTarget();
+    }
+
+    void Update()
+    {
         if (targetObject != null)
         {
             agent.SetDestination(targetObject.transform.position);
         }
         else
         {
-            Debug.LogWarning("Target object not found!");
+            FindNearestTarget();
+        }
+    }
+
+    void FindNearestTarget()
+    {
+        GameObject[] targets = GameObject.FindGameObjectsWithTag(targetObjectTag);
+        if (targets.Length > 0)
+        {
+            float shortestDistance = Mathf.Infinity;
+            GameObject nearestTarget = null;
+
+            foreach (GameObject target in targets)
+            {
+                float distance = Vector3.Distance(transform.position, target.transform.position);
+                if (distance < shortestDistance)
+                {
+                    shortestDistance = distance;
+                    nearestTarget = target;
+                }
+            }
+
+            targetObject = nearestTarget;
+        }
+        else
+        {
+            Debug.LogWarning("No target objects found with tag: " + targetObjectTag);
         }
     }
 }
-
