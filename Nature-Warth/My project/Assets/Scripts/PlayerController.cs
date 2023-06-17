@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -49,7 +50,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No target objects found with tag: " + targetObjectTag);
+            // Debug.LogWarning("No target objects found with tag: " + targetObjectTag);
+            // SceneManagementceneManager.LoadScene("SceneManager.GetActiveScene().buildIndex = 1");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

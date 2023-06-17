@@ -21,6 +21,6 @@ public class DisplayMoney : MonoBehaviour
     private void Update()
     {
         // Update the text value with the player's current gold balance
-        goldText.text = "Gold: " + playerEconomy.GetGoldBalance();
+        goldText.text = "Sticks: " + playerEconomy.GetGoldBalance();
     }
 }

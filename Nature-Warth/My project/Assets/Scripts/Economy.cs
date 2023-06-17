@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Economy : MonoBehaviour
 {
- private int goldBalance = 100; // Initial gold balance
+ private int goldBalance = 25; // Initial gold balance
 
     // Function to add gold to the player's balance 
     public void AddGold(int amount)

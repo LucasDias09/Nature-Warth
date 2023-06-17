@@ -32,6 +32,7 @@ using UnityEngine.AI;
 
 public class CollisionDetect : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider other)
     {   
         if(other.gameObject.tag == "Champignon")
