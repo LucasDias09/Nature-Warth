@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Mushroom
   - Tree
+  - Bot
+  - TrunkWrath
+  - Champignon
   layers:
   - Default
   - TransparentFX
